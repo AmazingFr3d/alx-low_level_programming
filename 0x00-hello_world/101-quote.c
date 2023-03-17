@@ -9,7 +9,7 @@
 int main(void)
 {
 	int i = 0;
-	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
+	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 	
 	while (str[i] != "\0")
 	{
