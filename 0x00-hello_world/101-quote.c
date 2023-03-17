@@ -1,16 +1,16 @@
 #include <stdio.h>
 /**
  * main - Entry point to the program
- * Return: 1 will be returned
+ * Return: the function will return a value of 1
  */
 int main(void)
 {
-	int i = 0;
-	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	int n = 0;
+	char st[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	while (str[i]  != '\0')
+	while (st[n]  != '\0')
 	{
-		putchar(str[i]);
+		putchar(st[n]);
 		n++;
 	}
 	return (1);
