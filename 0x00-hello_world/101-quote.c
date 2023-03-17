@@ -8,7 +8,16 @@
  */
 int main(void)
 {
-	write(STDOUT_FILENO, "and that piece of art is useful
-			\" - Dora Korpar, 2015-10-19\n", 59);
+	int i = 0;
+	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
+	
+	while (str[i] != "\0")
+	{
+
+		putchar(str[i]);
+		n = n+1;
+
+	}
+
 	return (1);
 }
