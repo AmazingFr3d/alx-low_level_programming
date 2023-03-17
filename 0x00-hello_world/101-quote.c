@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <unistd.h>
 
 /**
  * main - Entry point
@@ -15,7 +14,7 @@ int main(void)
 	{
 
 		putchar(str[i]);
-		n = n+1;
+		n++;
 
 	}
 
