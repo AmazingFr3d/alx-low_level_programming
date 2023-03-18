@@ -1,12 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
-/* 
- *main: generates a random number for n and print the polarity
+/**
+ * main - Checks and prints if a number is positive, negative or zero
  *
- *Return: always return zero(0)
-*/
+ * Return: always zero 0 (success)
+ */
 int main(void)
 {
 	int n;
@@ -16,12 +15,15 @@ int main(void)
 	
 	if (n == 0)
 	{
-		printf("%d is zero", n);		
-	}else if (n < 0)
+		printf("%d is zero\n", n);		
+	}
+	else if (n < 0)
 	{
-		printf("%d is negative", n);
-	}else{
-		printf("%d is positive", n);
+		printf("%d is negative\n", n);
+	}
+	else
+	{
+		printf("%d is positive\n", n);
 	}
 	return (0);
 }
