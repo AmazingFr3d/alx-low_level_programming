@@ -21,7 +21,7 @@ int print_sign(int n)
 	else
 	{
 		_putchar('-');
-		rtn = -1
+		rtn = -1;
 	}
-	return rtn
+	return rtn;
 }
