@@ -2,7 +2,6 @@
 #include "ctype.h"
 /**
  * _islower - Checks if c is lower case
- *
  */
 int _islower(int c)
 {
