@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * _print_rev_recursion - check the code
- * *s: String to be printed
+ * @s: String to be printed
  * Return: void.
  */
 void _print_rev_recursion(char *s)
