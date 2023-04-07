@@ -1,10 +1,26 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * _sqrt_recursion - returns the natural square root of a number
  * _helper - helper funtion
- * @n: Input Number
+ * @j: Input Number
  * @i: Initial guess
+ * Return: -1 If n does not have a natural square root.
+ */
+int _helper(int j, int i)
+{
+	if (i * i == j)
+	{
+		return (i);
+	}
+	else if (i * i > j)
+	{
+		return (-1);
+	}
+	return (_helper(j, i + 1));
+}
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: Number To Square
  * Return: -1 If n does not have a natural square root.
  */
 int _sqrt_recursion(int n)
@@ -17,16 +33,5 @@ int _sqrt_recursion(int n)
 	{
 		return (_helper(n, 1));
 	}
-}
-int _helper(int n, int i)
-{
-	if (i * i == n)
-	{
-		return (i);
-	}
-	else if (i * i > n)
-	{
-		return (-1);
-	}
-	return (_helper(n, i + 1));
+
 }
