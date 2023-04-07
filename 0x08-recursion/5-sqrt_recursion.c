@@ -16,7 +16,10 @@ int _helper(int j, int i)
 	{
 		return (-1);
 	}
-	return (_helper(j, i + 1));
+	else
+	{
+		return (_helper(j, i + 1));
+	}
 }
 /**
  * _sqrt_recursion - returns the natural square root of a number
