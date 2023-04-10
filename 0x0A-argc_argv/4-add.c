@@ -10,27 +10,26 @@
 int main(int argc, char *argv[])
 {
 	int sum = 0;
-	int c;
+	int c, d, val;
 
-	if (argc > 2)
-	{
-		for (c = 1; c < argc; c++)
-		{
-			if (isdigit(*argv[c]) != 0)
-			{
-				sum += atoi(argv[c]);
-			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
-		}
-		printf("%d\n", sum);
-	}
-	else
+	if (argc == 1)
 	{
 		printf("0\n");
+		return (0);
 	}
+	for (c = 1; c < argc; c++)
+	{
+		for (d = 0; argv[c][d] != '\0'; d++)
+		{
+			if (isdigit(argv[c][d]) == 0)
+			{
+				printf("Error\n");
+                                return (1);
+			}
+		}
+		val = atoi(argv[c]);
+		sum += val;
+	}
+	printf("%d\n", sum);
 	return (0);
 }
