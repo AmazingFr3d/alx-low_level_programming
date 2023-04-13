@@ -35,10 +35,9 @@ int sum_up_word(char *sm)
 char **strtow(char *str)
 {
 	char **spr, *tsr;
-	int x, z, ac, word, i, set, finish;
+	int m, z = 0, ac = 0, word, i = 0, set, finish;
 
 
-	ac = 0;
 	while (*(str + ac))
 	{
 		ac++;
@@ -46,18 +45,18 @@ char **strtow(char *str)
 	word = sum_up_word(str);
 	if (word == 0)
 		return (NULL);
-	spr =  malloc(sizeof(char *) * (word + 1));
+	spr =(char **)malloc(sizeof(char *) * (word + 1));
 	if (spr == NULL)
 		return (NULL);
-	for (x = 0; x <= ac; x++)
+	for (m = 0; m <= ac; m++)
 	{
-		if (str[x] == ' ' || str[x] == '\0')
+		if (str[m] == ' ' || str[m] == '\0')
 		{
 			i = 0;
 			if (i)
 			{
-				finish = x;
-				tsr = malloc(sizeof(char) * (i + 1));
+				finish = m;
+				tsr =(char *)malloc(sizeof(char) * (i + 1));
 				if (tsr == NULL)
 					return (NULL);
 				while (set < finish)
@@ -69,7 +68,7 @@ char **strtow(char *str)
 			}
 		}
 		else if (i++ == 0)
-			set = x;
+			set = m;
 	}
 	spr[z] = NULL;
 	return (spr);
