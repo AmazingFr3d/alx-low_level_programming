@@ -26,7 +26,7 @@ char *argstostr(int ac, char **av)
 		w = 0;
 		v++;
 	}
-	spr = malloc((ac + 1) + (sizeof(char) * ar));
+	spr = malloc(ac + 1 + (sizeof(char) * ar));
 	v = 0;
 	while (av[v])
 	{
@@ -37,6 +37,7 @@ char *argstostr(int ac, char **av)
 			w++;
 		}
 		spr[x] = '\n';
+		w = 0;
 		x++;
 		v++;
 	}
