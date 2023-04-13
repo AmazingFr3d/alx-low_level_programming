@@ -9,39 +9,39 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int ar, v, w, x;
+	int ar = 0, z = 0, w = 0, k = 0;
 	char *spr;
 
 	if (ac == 0 || av  == NULL)
 	{
 		return (NULL);
 	}
-	while (v < ac)
+	while (z < ac)
 	{
-		while (av[v][w])
+		while (av[z][w])
 		{
 			ar++;
 			w++;
 		}
 		w = 0;
-		v++;
+		z++;
 	}
-	spr = malloc(ac + 1 + (sizeof(char) * ar));
-	v = 0;
-	while (av[v])
+	spr = malloc((sizeof(char) * ar) + ac + 1);
+	z = 0;
+	while (av[z])
 	{
-		while (av[v][w])
+		while (av[z][w])
 		{
-			spr[x] = av[v][w];
-			x++;
+			spr[k] = av[z][w];
+			k++;
 			w++;
 		}
-		spr[x] = '\n';
+		spr[k] = '\n';
 		w = 0;
-		x++;
-		v++;
+		k++;
+		z++;
 	}
-	x++;
-	spr[x] = '\0';
+	k++;
+	spr[k] = '\0';
 	return (spr);
 }
