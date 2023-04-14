@@ -3,9 +3,9 @@
 #include <stdlib.h>
 /**
  * string_nconcat - concatenation of two strings
- * @s1: first string to be concatenated
- * @s2: second string to be concatenated
- * @n: an integer
+ * @s1: first string allocated
+ * @s2: second string allocated
+ * @n: number of bytes
  * Return: 0 Always
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -13,30 +13,37 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *i;
 	unsigned int x = 0, z = 0, l = 0, m = 0;
 
-	while (s2 && s2[m])
+	while (s1[x])
 	{
-		m++;
+		x++;
 	}
-	while (s1 && s1[l])
+	while (s2[l])
 	{
 		l++;
 	}
-	if (m > n)
-	{
-		i = malloc(sizeof(char) * (m + n + 1));
-	}
+	if (l <= n)
+		m = l + x;
 	else
-		i = malloc((m + l + 1) * sizeof(char));
+		m = n + x;
+	i = malloc(sizeof(char) * m + 1);
 	if (i == NULL)
-		return (NULL);
-	while (l > z)
 	{
-		i[x] = s1[x];
-		x++;
+		return (NULL);
 	}
-	while (m <= n && x < (m + n))
-		i[x++] = s2[z++];
-	i[x] = '\0';
+	l = 0;
+	while (z < m)
+	{
+		if (m >= z)
+			i[z] = s1[z];
+		if (x <= z)
+		{
+			i[z] = s2[l];
+			l++;
+		}
+		z++;
+	}
+	i[z] = '\0';
 	return (i);
 }
+
 
