@@ -1,5 +1,4 @@
 #include "main.h"
-#include "ctype.h"
 /**
  * _isalpha - Checks is c is alphabet
  * @c: This is the variable to be checked
@@ -7,15 +6,5 @@
  */
 int _isalpha(int c)
 {
-	int rtn;
-
-	if (isalpha(c) != 0)
-	{
-		rtn = 1;
-	}
-	else
-	{
-		rtn = 0;
-	}
-	return (rtn);
+	return (0);
 }
