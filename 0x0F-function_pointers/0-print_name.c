@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include "function_pointers.h"
 /**
- * new_dog - initialize a variable of type struct dog
- * @d: dog struct pointer
- * @name: Dog name
- * @age: Dog age
- * @owner: Dog owner's name
+ * print_name - a function that prints a name.
+ * @name: String to be printed
+ * @f: Pointer to a function
  * Return: Void
  */
 void print_name(char *name, void (*f)(char *))
