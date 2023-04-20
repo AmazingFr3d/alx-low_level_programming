@@ -10,7 +10,7 @@
 int main(int argc, char **argv)
 {
 	int bytes, i;
-	char *main_ptr = (char *)main;
+	char *main_ptr;
 
 	if (argc != 2)
 	{
@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit (2);
 	}
+	main_ptr = (char *)main;
 	for (i = 0; i < bytes; i++)
 	{
 		if (i >= bytes - 1)
