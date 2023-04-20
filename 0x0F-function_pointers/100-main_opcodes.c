@@ -15,19 +15,22 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit (1);
 	}
 	bytes = atoi(argv[1]);
 	if (bytes < 0)
 	{
-
 		printf("Error\n");
-		return (2);
+		exit (2);
 	}
 	for (i = 0; i < bytes; i++)
 	{
-		printf("%02x ", main_ptr[i] & 0xff);
+		if (i >= bytes - 1)
+		{
+			printf("%02x\n ", main_ptr[i]);
+			break;
+		}
+		printf("%02hhx ", main_ptr[i]);
 	}
-	printf("\n");
 	return (0);
 }
