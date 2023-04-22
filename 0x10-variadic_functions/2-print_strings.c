@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 /**
- * print_numbers - prints numbers, followed by a new line
+ * print_strings - prints strings, followed by a new line
  * @n: mandatory parameter
  * @separator: separator charater
  * Return: void
@@ -32,6 +32,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", separator);
 		}
 	}
-	va_end(ap);
 	printf("\n");
+	va_end(ap);
 }
