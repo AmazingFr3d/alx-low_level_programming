@@ -10,9 +10,6 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	char c;
-	int i;
-	float f;
 	char *s, *sep = "";
 	int index = 0;
 
@@ -21,26 +18,22 @@ void print_all(const char * const format, ...)
 	{
 		if (format[index] == 'c')
 		{
-			c = va_arg(ap, int);
-			printf("%s%c", sep, c);
+			printf("%s%c", sep, va_arg(ap, int));
 		}
 		else if (format[index] == 'i')
 		{
-			i = va_arg(ap, int);
-			printf("%s%d", sep, i);
+			printf("%s%d", sep, va_arg(ap, int));
 		}
 		else if (format[index] == 'f')
 		{
-			f = va_arg(ap, double);
-			printf("%s%f", sep, f);
+			printf("%s%f", sep, va_arg(ap, double));
 		}
 		else if (format[index] == 's')
 		{
-			s = va_arg(ap, char *);
 			if (s == NULL)
 				printf("(nil)");
 			else
-				printf("%s%s", sep, s);
+				printf("%s%s", sep, va_arg(ap, char *));
 		}
 		sep = ", ";
 		index += 1;
