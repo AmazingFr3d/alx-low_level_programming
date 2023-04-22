@@ -13,8 +13,7 @@ void print_all(const char * const format, ...)
 	char c;
 	int i;
 	float f;
-	char *s;
-	char *sep ="";
+	char *s, *sep = "";
 	int index = 0;
 
 	va_start(ap, format);
@@ -39,13 +38,9 @@ void print_all(const char * const format, ...)
 		{
 			s = va_arg(ap, char *);
 			if (s == NULL)
-			{
 				printf("(nil)");
-			}
 			else
-			{
-				printf("%s%s",sep , s);
-			}
+				printf("%s%s", sep, s);
 		}
 		sep = ", ";
 		index += 1;
