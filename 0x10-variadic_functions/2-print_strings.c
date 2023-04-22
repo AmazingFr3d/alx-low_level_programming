@@ -9,15 +9,24 @@
  * Return: void
  */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int c;
 	va_list ap;
+	char *sptr;
 
 	va_start(ap, n);
 	for (c = 0; c < n; c++)
 	{
-		printf("%d", va_arg(ap, const unsigned int));
+		sptr = va_arg(ap, char*);
+		if (sptr == NULL)
+		{
+			printf("(nil)");
+		}
+		else
+		{
+			printf("%s", sptr);
+		}
 		if (separator != NULL && (n - 1) > c)
 		{
 			printf("%s", separator);
