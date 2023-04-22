@@ -19,19 +19,19 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (c = 0; c < n; c++)
 	{
 		sptr = va_arg(ap, char*);
-		if (sptr == NULL)
+		if (sptr != NULL)
 		{
-			printf("(nil)");
+			printf("%s", sptr);
 		}
 		else
 		{
-			printf("%s", sptr);
+			printf("(nil)");
 		}
 		if (separator != NULL && (n - 1) > c)
 		{
 			printf("%s", separator);
 		}
 	}
-	printf("\n");
 	va_end(ap);
+	printf("\n");
 }
