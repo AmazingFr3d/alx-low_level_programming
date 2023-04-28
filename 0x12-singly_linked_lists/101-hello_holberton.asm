@@ -1,19 +1,22 @@
 section .data
-	hello db "Hello, Holberton",0
-	format db "%s\n",0
+	message: db "Hello, Hoblberton", 0
+	format:  db "%s", 10, 0
 
 section .text
-	global main
+    global main
+    extern printf
 
 main:
-	; prepare arguments for printf function call
-	push qword format
-	push qword hello
+	; Load the address of the message string into esi
+	lea edi, [format]
+
+	; Load the address of the format string into edi
+	lea esi, [message]
+
+	; Call printf with the message string as argument
+	xor eax, eax
 	call printf
 
-	; clean up the stack
-	add rsp, 16
-
-	; exit the program
-	mov eax, 0
+	; Exit the program
+	xor eax, eax
 	ret
