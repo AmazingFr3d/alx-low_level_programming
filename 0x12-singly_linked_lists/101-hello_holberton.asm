@@ -1,22 +1,20 @@
 section .data
-	message: db "Hello, Hoblberton", 0
-	format:  db "%s", 10, 0
+    message: db "Hello, Holberton", 0
+    format: db "%s", 10, 0
 
 section .text
     global main
     extern printf
 
 main:
-	; Load the address of the message string into esi
-	lea edi, [format]
+    ; Call printf to print the message
+    push message
+    push format
+    call printf
 
-	; Load the address of the format string into edi
-	lea esi, [message]
+    ; Clean up the stack
+    add rsp, 16
 
-	; Call printf with the message string as argument
-	xor eax, eax
-	call printf
-
-	; Exit the program
-	xor eax, eax
-	ret
+    ; Return 0 to indicate success
+    mov eax, 0
+    ret
