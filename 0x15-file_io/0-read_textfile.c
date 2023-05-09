@@ -2,13 +2,9 @@
 
 /**
  * read_textfile - prints it to the POSIX standard output
- *
  * @filename: Nmae of file
- *
  * @letters: Number of letters to be read and printed
- *
  * Return: returns the actual number of letters it could read and print
- *
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
